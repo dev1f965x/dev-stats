@@ -2,7 +2,7 @@
 
 🌐 [English](./README.md) | [한국어](./README.ko.md)
 
-Minimal counter board for tracking dev tools/languages used across projects — add an item, bump its count up or down.
+프로젝트마다 사용한 개발 도구/언어를 기록하는 카운터 보드 — 항목 추가하고 숫자 증감.
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
@@ -10,28 +10,28 @@ Minimal counter board for tracking dev tools/languages used across projects — 
 ![PostgreSQL](https://img.shields.io/badge/DB-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## Features
+## 기능
 
-- Add an item by name
-- Increment / decrement its count
-- Delete an item
+- 이름으로 항목 추가
+- 카운트 증감
+- 항목 삭제
 
-## Tech Stack
+## 기술 스택
 
-- **Next.js** — App Router, Server Actions (no separate REST API)
+- **Next.js** — App Router, Server Actions (별도 REST API 없음)
 - **TypeScript**
 - **Tailwind CSS**
-- **Prisma** — with `@prisma/adapter-pg` driver adapter
+- **Prisma** — `@prisma/adapter-pg` 드라이버 어댑터 사용
 - **PostgreSQL**
 - **Docker Compose** — app + db
 
-## Getting Started
+## 시작하기
 
-### Prerequisites
+### 필요한 것
 
 - Docker Desktop
 
-### Run
+### 실행
 
 ```bash
 git clone https://github.com/dev1f965x/dev-stats.git
@@ -39,15 +39,15 @@ cd dev-stats
 docker compose up --build
 ```
 
-App runs on `http://localhost:3000`, Postgres on `5432`.
+앱은 `http://localhost:3000`, Postgres는 `5432`에서 실행됩니다.
 
-### Apply the database schema
+### DB 스키마 적용
 
 ```bash
 docker compose exec app npx prisma migrate dev
 ```
 
-## Data Model
+## 데이터 모델
 
 ```prisma
 model Item {
@@ -58,14 +58,14 @@ model Item {
 }
 ```
 
-## Roadmap
+## 로드맵
 
-This is a walking skeleton — the plan is to keep evolving it rather than treat it as finished:
+Walking skeleton 단계 — 완성작이 아니라 계속 진화시킬 예정:
 
-- [ ] shadcn/ui components
-- [ ] Categories/grouping
-- [ ] Electron desktop build
+- [ ] shadcn/ui 컴포넌트
+- [ ] 카테고리/그룹핑
+- [ ] Electron 데스크톱 빌드
 
-## License
+## 라이선스
 
 [MIT](./LICENSE)
