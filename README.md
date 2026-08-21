@@ -1,6 +1,6 @@
 # dev-stats
 
-🌐 [English](./README.md) | [한국어](./README.ko.md)
+[English](./README.md) | [한국어](./README.ko.md)
 
 Minimal counter board for tracking dev tools/languages used across projects — add an item, bump its count up or down.
 

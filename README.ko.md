@@ -1,6 +1,6 @@
 # dev-stats
 
-🌐 [English](./README.md) | [한국어](./README.ko.md)
+[English](./README.md) | [한국어](./README.ko.md)
 
 프로젝트마다 사용한 개발 도구/언어를 기록하는 카운터 보드 — 항목 추가하고 숫자 증감.
 
