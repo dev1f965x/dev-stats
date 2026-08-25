@@ -15,6 +15,7 @@ Minimal counter board for tracking dev tools/languages used across projects — 
 - Add an item by name
 - Increment / decrement its count
 - Delete an item
+- Auto-detected tech icon next to recognized item names (Go, Docker, Next.js, etc.)
 
 ## Tech Stack
 
@@ -62,7 +63,6 @@ model Item {
 
 This is a walking skeleton — the plan is to keep evolving it rather than treat it as finished:
 
-- [ ] shadcn/ui components
 - [ ] Categories/grouping
 - [ ] Electron desktop build
 
