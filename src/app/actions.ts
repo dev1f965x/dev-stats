@@ -1,7 +1,8 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+
+import { prisma } from "@/lib/prisma";
 
 export async function addItem(formData: FormData) {
   const name = formData.get("name");
@@ -20,8 +21,9 @@ export async function incrementItem(id: string) {
 }
 
 export async function decrementItem(id: string) {
-  await prisma.item.update({
-    where: { id },
+  // Filtering on count keeps a double click from going below zero.
+  await prisma.item.updateMany({
+    where: { id, count: { gt: 0 } },
     data: { count: { decrement: 1 } },
   });
   revalidatePath("/");

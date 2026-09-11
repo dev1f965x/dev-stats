@@ -12,37 +12,36 @@ import {
   SiSqlite,
   SiTailwindcss,
 } from "@icons-pack/react-simple-icons";
+import type { ReactElement } from "react";
 
-const iconMap: Record<string, typeof SiGo> = {
-  go: SiGo,
-  sqlite: SiSqlite,
-  "next.js": SiNextdotjs,
-  shadcn: SiShadcnui,
-  "tailwind css": SiTailwindcss,
-  prisma: SiPrisma,
-  postgresql: SiPostgresql,
-  docker: SiDocker,
-  "docker compose": SiDocker,
-  git: SiGit,
-  github: SiGithub,
-  "conventional commits": SiConventionalcommits,
-  "claude code": SiClaudecode,
+const ICON_CLASS = "shrink-0 text-muted-foreground";
+
+/** Logos keyed by lowercase item name. Rendered once, since every icon uses the same props. */
+const ICONS: Record<string, ReactElement> = {
+  go: <SiGo size={18} className={ICON_CLASS} />,
+  sqlite: <SiSqlite size={18} className={ICON_CLASS} />,
+  "next.js": <SiNextdotjs size={18} className={ICON_CLASS} />,
+  shadcn: <SiShadcnui size={18} className={ICON_CLASS} />,
+  "tailwind css": <SiTailwindcss size={18} className={ICON_CLASS} />,
+  prisma: <SiPrisma size={18} className={ICON_CLASS} />,
+  postgresql: <SiPostgresql size={18} className={ICON_CLASS} />,
+  docker: <SiDocker size={18} className={ICON_CLASS} />,
+  "docker compose": <SiDocker size={18} className={ICON_CLASS} />,
+  git: <SiGit size={18} className={ICON_CLASS} />,
+  github: <SiGithub size={18} className={ICON_CLASS} />,
+  "conventional commits": <SiConventionalcommits size={18} className={ICON_CLASS} />,
+  "claude code": <SiClaudecode size={18} className={ICON_CLASS} />,
 };
 
-export function getTechIcon(name: string): typeof SiGo | undefined {
-  return iconMap[name.trim().toLowerCase()];
-}
-
+/** The item's logo if the name is known, otherwise its first letter in a circle. */
 export function TechIcon({ name }: { name: string }) {
-  const Icon = getTechIcon(name);
-
-  if (Icon) {
-    return <Icon size={18} className="shrink-0 text-muted-foreground" />;
-  }
+  const trimmed = name.trim();
 
   return (
-    <div className="flex size-[18px] shrink-0 items-center justify-center rounded-full bg-muted text-[10px] font-medium text-muted-foreground">
-      {name.trim().charAt(0).toUpperCase()}
-    </div>
+    ICONS[trimmed.toLowerCase()] ?? (
+      <div className="flex size-[18px] shrink-0 items-center justify-center rounded-full bg-muted text-[10px] font-medium text-muted-foreground">
+        {trimmed.charAt(0).toUpperCase()}
+      </div>
+    )
   );
 }
