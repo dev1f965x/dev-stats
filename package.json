@@ -1,6 +1,9 @@
 {
   "name": "dev-stats",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Counter board for the languages and tools used across projects",
+  "author": "dev1f965x",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
